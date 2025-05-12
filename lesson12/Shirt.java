@@ -1,32 +1,39 @@
 package lesson12;
 
-public class Shirt extends Clothing{
-    private char fit = 'U';
+// The Shirt class extends Clothing and adds an additional 'fit' attribute specific to shirts
+public class Shirt extends Clothing {
+    private char fit = 'U'; // Fit of the shirt ('U' = Unknown by default, could be 'S', 'R', 'L' for Slim, Regular, Loose, etc.)
 
+    // Constructor that initializes all fields, including those from the superclass
     public Shirt(int itemID, String desc, char colourCode, double price, char fit) {
-        //links to superclass(always first line of subclass constructor!!!!)
+        // Calls the constructor of the Clothing superclass (must be the first statement)
         super(itemID, desc, colourCode, price);
-        this.fit = fit;
+        this.fit = fit; // Sets the fit for this Shirt instance
     }
 
-    //    overloaded constructor
+    // Overloaded constructor that sets only fit and uses a default price
     public Shirt(char fit) {
-        this(15.00, fit);
+        this(15.00, fit); // Calls another constructor in this class with default price
     }
 
+    // Overloaded constructor that sets both price and fit
     public Shirt(double price, char fit) {
-        super(price);
-        this.fit = fit;
+        super(price);     // Calls the superclass constructor that sets only price
+        this.fit = fit;   // Sets the fit value
     }
+
+    // Getter method for fit
     public char getFit() {
         return fit;
     }
 
+    // Setter method for fit
     public void setFit(char fit) {
         this.fit = fit;
     }
 
-    //    overridden method
+    // Overridden display method to include 'fit' information in addition to superclass fields
+    @Override
     public void display() {
         System.out.println("ItemID: " + getItemID());
         System.out.println("Item Description: " + getDesc());
@@ -35,7 +42,10 @@ public class Shirt extends Clothing{
         System.out.println("Fit: " + fit);
     }
 
+    // Optional override of setColourCode, simply calls the superclass version (could be extended in the future)
+    @Override
     public void setColourCode(char colourCode) {
         super.setColourCode(colourCode);
     }
 }
+

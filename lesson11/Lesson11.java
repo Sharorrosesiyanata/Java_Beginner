@@ -7,51 +7,63 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import java.time.format.FormatStyle;
 
-    public class Lesson11 {
-        public static void main(String[] args) {
+public class Lesson11 {
+    public static void main(String[] args) {
+
+        //************ Working with Dates ************//
+
+//        // Get current date
 //        LocalDate myDate = LocalDate.now();
 //        System.out.println("Today's date is " + myDate);
 //
+//        // Subtract 10 months from the current date
 //        LocalDate newDate = myDate.minusMonths(10);
 //        System.out.println("The new date is " + newDate);
 //
+//        // Convert to Japanese calendar date
 //        JapaneseDate jDate = JapaneseDate.from(myDate);
 //        System.out.println("Today's date in Japan is " + jDate);
 //
+//        // Get current date and time
 //        LocalDateTime today = LocalDateTime.now();
 //        System.out.println("Today's date (without formatting) is " + today);
 //
+//        // Format date in ISO format
 //        String sdate = today.format(DateTimeFormatter.ISO_DATE_TIME);
 //        System.out.println("Today's date (in ISO_DATE_TIME format) is " + sdate);
 //
+//        // Format date in localized medium format
 //        String fdate = today.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM));
 //        System.out.println("Today's date (in Medium Localized format) is " + fdate);
 
-//******************2-D ARRAYS*****************
-//        int[][] yearlySales;
-////        5 inner arrays each with 4 elements
-//        yearlySales = new int[5][4];
+        //************ 2D Arrays ************//
+
+//        int[][] yearlySales; // Declare 2D array
+//        yearlySales = new int[5][4]; // Initialize with 5 rows and 4 columns (e.g. 5 years, 4 quarters)
 //        yearlySales[0][0] = 1000;
 //        yearlySales[0][1] = 1500;
 //        yearlySales[0][2] = 1800;
 //        yearlySales[1][0] = 1000;
 //        yearlySales[3][3] = 2000;
 
-//******************WHILE LOOP*****************
+        //************ While Loop ************//
+
 //        System.out.println("/*");
 //        int counter = 0;
-//        while(counter < 3) {
+//        while(counter < 3) { // Repeats 3 times
 //            System.out.println(" *");
 //            counter++;
 //        }
 //        System.out.println("/*");
 
-//******************FOR LOOP*****************
+        //************ For and While Loop ************//
+
 //        System.out.println("**For Loop**");
 //        for (int i = 0; i < 5; i++) {
-//            System.out.print("i = " + i + ";");
+//            System.out.print("i = " + i + ";"); // Iterates from 0 to 4
 //        }
-//        //converted to a while loop
+
+//        // Converted to while loop
 //        System.out.println("\n**While Loop**");
 //        int i = 0;
 //        while(i < 5) {
@@ -59,50 +71,58 @@ import java.time.format.FormatStyle;
 //            i++;
 //        }
 
-//        String[] names = {"Jada", "Maadimo", "Hazel", "Lesego"};
-////      ENHANCED FOR LOOP
-//        for (String n: names) {
-//            System.out.println(n);
-//        }
+        //************ Enhanced For Loop ************//
 
-//******************DO WHILE LOOP*****************
-//        factorial(5);
-//        factorial(10);
+//        String[] names = {"Jada", "Maadimo", "Hazel", "Lesego"};
+//        for (String n: names) { // Loops through each element in the array
+//            System.out.println(n);
+//       }
+
+        //************ Do-While Loop and Factorial ************//
+
+//        factorial(5); // Compute factorial of 5
+//        factorial(10); // Compute factorial of 10
+
+        //************ Continue in For Loop ************//
 
 //        String[] names = {"Jada", "Maadimo", "Hazel", "Lesego"};
 //        for (int idx = 0; idx < names.length; idx++) {
 //            if (names[idx].equalsIgnoreCase("Unavailable")) {
-//                continue;
+//                continue; // Skip "Unavailable"
 //            }
 //            System.out.println(names[idx]);
 //        }
 
-//******************NESTED WHILE LOOP*****************
+        //************ Nested While Loop (Random Letter Guessing) ************//
+
 //        String name = "Lenny";
 //        String guess = "";
 //        int attempts = 0;
-//        while(!guess.equalsIgnoreCase(name)) {
+//        while(!guess.equalsIgnoreCase(name)) { // Repeat until guessed name matches
 //            guess = "";
 //            while (guess.length() < name.length()) {
-//                char asciiChar = (char) (Math.random() * 26 + 97);
+//                char asciiChar = (char) (Math.random() * 26 + 97); // Generate random lowercase letter
 //                guess += asciiChar;
 //            }
 //            attempts++;
 //        }
 //        System.out.println(name + " found after " + attempts + " tries!");
 
-//******************NESTED FOR LOOP*****************
-//        int h = 4, w = 10;
-//
+        //************ Nested For Loop (Pattern Drawing) ************//
+
+//        int h = 4, w = 10; // Height and width
 //        for (int row = 0; row < h; row++) {
 //            for (int col = 0; col < w; col++) {
-//                System.out.print("@");
+//                System.out.print("@"); // Print @ in row
 //            }
-//            System.out.println();
+//            System.out.println(); // New line after each row
 //        }
-            int sales[][] = new int[3][4];
-            int[][] salesArray = initArray(sales);
 
+        //************ Initialize and Print 2D Array ************//
+
+//        int sales[][] = new int[3][4]; // 3 years, 4 quarters
+//        int[][] salesArray = intiArray(sales); // Initialize with values
+//
 //        System.out.println("Yearly sales by quarter beginning 2010:");
 //        for (int i = 0; i < sales.length; i++) {
 //            for (int j = 0; j < sales[i].length; j++) {
@@ -110,39 +130,43 @@ import java.time.format.FormatStyle;
 //            }
 //            System.out.println();
 //        }
-            ArrayList<String> names;
-            names = new ArrayList();
 
-            names.add("Jamie");
-            names.add("Gustav");
-            names.add("Alisa");
-            names.add("Jose");
-            System.out.println(names);
-            //adds element in index 2 (specified index)
-            names.add(2, "Prashant");
-            System.out.println(names);
-            System.out.println();
-            //removes first element
-            names.remove(0);
-            System.out.println(names);
-            //remove last element
-            names.remove(names.size() - 1);
-            System.out.println(names);
-            names.remove("Gustav");
-            System.out.println(names);
-        }
+        //************ ArrayList Manipulation ************//
 
-        public static int[][] initArray(int[][] salesArray) {
-            int salesAmt = 100;
-            for (int outer = 0; outer < 3; outer++) {
-                for (int inner = 0; inner < 4; inner++) {
-                    salesArray[outer][inner] = salesAmt++;
-                }
+//        ArrayList<String> names;
+//        names = new ArrayList();
 
-            }
-            return salesArray;
-        }
+//        names.add("Jamie");
+//        names.add("Gustav");
+//        names.add("Alisa");
+//        names.add("Jose");
+//        System.out.println(names);
 
+//        names.add(2, "Prashant"); // Insert at index 2
+//        System.out.println(names);
+
+//        names.remove(0); // Remove first
+//        System.out.println(names);
+
+//        names.remove(names.size() - 1); // Remove last
+//        System.out.println(names);
+
+//        names.remove("Gustav"); // Remove by value
+//        System.out.println(names);
+//    }
+//
+//    //************ Initialize 2D Array with Incremental Values ************//
+//    public static int[][] initArray(int[][] salesArray) {
+//        int salesAmt = 100;
+//        for (int outer = 0; outer < 3; outer++) {
+//            for (int inner = 0; inner < 4; inner++) {
+//                salesArray[outer][inner] = salesAmt++; // Assign and increment
+//            }
+//        }
+//        return salesArray;
+//    }
+
+    //************ Calculate Factorial using Do-While Loop ************//
 //    static void factorial(int target) {
 //        int save = target;
 //        int fact = 1;
@@ -150,8 +174,5 @@ import java.time.format.FormatStyle;
 //            fact *= target--;
 //        } while (target > 0);
 //        System.out.println("Factorial for " + save + ": " + fact);
-//    }
     }
-
-
-
+}
